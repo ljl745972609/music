@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    tools:context=".MainActivity" >
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/rbMainStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="我的" />
+
+        <RadioButton
+            android:id="@+id/rb_taoge"
+            style="@style/rbMainStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="淘歌" />
+
+        <RadioButton
+            android:id="@+id/rb_search"
+            style="@style/rbMainStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="搜索" />
+
+        <RadioButton
+            android:id="@+id/rb_recommend"
+            style="@style/rbMainStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="推荐" />
+    </RadioGroup>
+    <!-- ViewPager+Fragment -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rg_main"
+        android:layout_above="@+id/rl_main_bottom" >
+    </android.support.v4.view.ViewPager>
+    <!-- 底部功能栏 -->
+    <RelativeLayout 
+        android:id="@+id/rl_main_bottom"
+        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+        <ImageView 
+            android:id="@+id/img_main_bottom_left"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:src="@drawable/img_album_background"/>
+        <ImageView 
+            android:id="@+id/img_main_bottom_right"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/icon_menu_point"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"/>
+        <View 
+            android:id="@+id/line_v"
+            android:layout_height="match_parent"
+            android:layout_width="0.5dp"
+            android:background="#ffffff"
+            android:layout_toLeftOf="@+id/img_main_bottom_right"
+            android:layout_marginRight="15dp"/>
+        <View 
+            android:id="@+id/line_h"
+            android:layout_height="0.5dp"
+            android:layout_width="match_parent"
+            android:background="#ffffff"/>
+        <ImageView 
+            android:id="@+id/img_main_next"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/line_v"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_media_next"/>
+        <ImageView 
+            android:id="@+id/img_main_play"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/img_main_next"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_media_play"/>
+        <LinearLayout 
+            android:id="@+id/ll_mian_bottom"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/img_main_bottom_left"
+            android:layout_toLeftOf="@+id/img_main_bottom_play">
+            <TextView 
+                android:id="@+id/tv_main_singer"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:text="unkown"
+                android:textColor="#999999"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+             <TextView 
+                android:id="@+id/tv_main_musicname"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:text="unkown"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:layout_weight="1"/>
+             <RelativeLayout 
+                 android:id="@+id/rl_music_info"
+                 android:layout_height="0dp"
+                 android:layout_width="match_parent"
+                 android:layout_weight="1"
+                 android:layout_marginLeft="5dp">
+                 <TextView 
+                     android:id="@+id/tv_main_currenttime"
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:gravity="center_vertical"
+                     android:text="00:00"
+                     android:textColor="#ffffff"/>
+                 <TextView 
+                     android:id="@+id/tv_line"
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="-"
+                     android:textColor="#ffffff"
+                     android:layout_toRightOf="@+id/tv_main_currenttime"/>
+                 <TextView 
+                     android:id="@+id/tv_main_totaltime"
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="00:00"
+                     android:textColor="#ffffff"
+                     android:layout_toRightOf="@+id/tv_line"/>
+             </RelativeLayout>
+        </LinearLayout>
+       
+        
+    </RelativeLayout>
+
+</RelativeLayout>

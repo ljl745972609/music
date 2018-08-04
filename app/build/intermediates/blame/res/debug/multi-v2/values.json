@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "21,30,3,10",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "806,1137,97,346",
+                        "endLines": "27,32,8,16",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "1096,1295,308,628"
+                    },
+                    "to": {
+                        "startLines": "16,23,26,31",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "933,1224,1385,1587",
+                        "endLines": "22,25,30,36",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "1219,1380,1582,1854"
+                    }
+                },
+                {
+                    "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,7,5,14,13,12,8,9,10,11,6",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "102,59,278,156,752,690,628,349,422,491,560,210",
+                        "endColumns": "52,41,69,52,81,60,60,71,67,67,66,66",
+                        "endOffsets": "150,96,343,204,829,746,684,416,485,554,622,272"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "169,222,264,334,387,469,530,591,663,731,799,866",
+                        "endColumns": "52,41,69,52,81,60,60,71,67,67,66,66",
+                        "endOffsets": "217,259,329,382,464,525,586,658,726,794,861,928"
+                    }
+                },
+                {
+                    "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,55",
+                        "endOffsets": "108,164"
+                    }
+                }
+            ]
+        }
+    ]
+}

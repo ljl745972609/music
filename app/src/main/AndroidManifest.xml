@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cwnu.ttpodmusic"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MusicPlayActivity"
+            android:label="@string/title_activity_music_play"></activity>
+
+        <service android:name=".service.MusicPlayService"></service>
+
+        <activity
+            android:name=".PlayWayActivity"
+            android:label="@string/title_activity_play_way"></activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting"></activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help"></activity>
+        <activity
+            android:name=".FileActivity"
+            android:label="@string/title_activity_file"></activity>
+        <activity
+            android:name=".DownloadManageActivity"
+            android:label="@string/title_activity_download_manage"></activity>
+        <activity android:name=".MyMusicActivity"></activity>
+    </application>
+
+</manifest>

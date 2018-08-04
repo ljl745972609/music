@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/MainActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/MusicPlayActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/WelcomeActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/adapter/MyAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/fragment/MineFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/fragment/SearchFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/utils/Global.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

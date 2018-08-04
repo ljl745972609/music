@@ -1,0 +1,246 @@
+[
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_menu_point.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_menu_point.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_music.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_my_music.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bg2.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\bg2.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_setting.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_setting.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_welcome1.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\welcome1.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_small.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_small.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_setting.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\setting.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_home_custom.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_home_custom.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_paly_way.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_paly_way.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_favorites.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_favorites.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wel2.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\wel2.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_backgroud.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\backgroud.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_play_way.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\play_way.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_new_playlist.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_new_playlist.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_welcome.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_recent_play_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_recent_play_plus.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_file.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\file.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_mine.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\fragment_mine.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_seacherbox_bj2.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\seacherbox_bj2.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_paly_way.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\paly_way.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_download_manage.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\download_manage.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_library_music_circle.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_library_music_circle.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_welcome.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\welcome.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bg1.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\bg1.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_search_delete.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\search_delete.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_img_album_background.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\img_album_background.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_music_play.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_music_play.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wel1.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\wel1.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_layout.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\item_layout.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_tao_ge.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\fragment_tao_ge.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi_selector_rbmian_color.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-nodpi\\selector_rbmian_color.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_music_play.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\music_play.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\anim_alpha.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\anim\\alpha.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_genre_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_genre_plus.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_recommend.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\fragment_recommend.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_download.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_download.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_search.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_search.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_album_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_album_plus.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_file.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_file.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_welcome2.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\welcome2.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_menu_more.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_menu_more.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_help.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_help.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_download_manage.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\activity_download_manage.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wel3.jpg.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\wel3.jpg"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\menu_help.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\menu\\help.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_goin.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\goin.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_recent_add_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_recent_add_plus.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_dialog_standard_return_icon.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\dialog_standard_return_icon.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_artist_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_artist_plus.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_seacherbox_bj.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\seacherbox_bj.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_local_music.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_local_music.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_favourite_normal.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_favourite_normal.png"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragement_top.xml.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\layout\\fragement_top.xml"
+    },
+    {
+        "merged": "E:\\jetBrains\\android\\music\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_folder_plus.png.flat",
+        "source": "E:\\jetBrains\\android\\music\\app\\src\\main\\res\\drawable-hdpi\\icon_folder_plus.png"
+    }
+]
