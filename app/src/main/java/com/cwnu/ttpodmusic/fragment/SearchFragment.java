@@ -1,23 +1,20 @@
 package com.cwnu.ttpodmusic.fragment;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,25 +24,21 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cwnu.ttpodmusic.MainActivity;
 import com.cwnu.ttpodmusic.R;
 import com.cwnu.ttpodmusic.adapter.SongsAdapter;
 import com.cwnu.ttpodmusic.entity.Songs;
+import com.cwnu.ttpodmusic.service.DownLoadService;
 import com.cwnu.ttpodmusic.utils.Constat;
 import com.cwnu.ttpodmusic.utils.JsonUtil;
-import com.cwnu.ttpodmusic.utils.OkHttpUtil;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import org.json.JSONObject;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -75,6 +68,9 @@ public class SearchFragment extends Fragment {
 
 	private List<Songs> list;
 
+	private Activity activity;
+
+	DownloadReceiver receiver;
 
 	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler(){
@@ -95,9 +91,9 @@ public class SearchFragment extends Fragment {
 		}
 	};
 
-	public SearchFragment() {
 
-
+	public SearchFragment(Activity activity){
+		this.activity = activity;
 	}
 
 	@Override
@@ -232,7 +228,47 @@ public class SearchFragment extends Fragment {
 		return result;
 	}
 
+	@Override
+	public void onResume() {
+		super.onResume();
+		// 注册服务
+		receiver = new DownloadReceiver();
+		IntentFilter filter = new IntentFilter(Constat.DOWNLOAD_FLAG);
+		getActivity().registerReceiver(receiver,filter);
+
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		if(receiver!=null){
+			getActivity().unregisterReceiver(receiver);
+		}
+	}
+
+	// 接收广播，然后开启服务
+
+	private class DownloadReceiver extends BroadcastReceiver{
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// 开启服务
+			Log.i(TAG, "onReceive: 接收到广播，正在开启下载服务");
+			Bundle bundle = intent.getExtras();
+			
+			if(bundle!= null){
+				Intent service = new Intent(activity,DownLoadService.class);
+
+				service.putExtras(intent.getExtras());
+				if(activity == null){
+					Log.i(TAG, "onReceive: activity is null");
+				}
+				// activity 确定不为空
+				Log.i(TAG, "onReceive: "+activity.getClass().getName());
+				activity.startService(service);
 
 
-
+			}
+		}
+	}
 }

@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/adapter/MyAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/fragment/MineFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/fragment/SearchFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/service/MusicPlayService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/cwnu/ttpodmusic/utils/Global.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

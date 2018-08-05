@@ -6,6 +6,8 @@ import android.view.Menu;
 
 public class DownloadManageActivity extends Activity {
 
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

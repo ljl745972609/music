@@ -84,13 +84,13 @@ ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:30:27-74
 activity#com.cwnu.ttpodmusic.MusicPlayActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:33:9-35:74
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:33:9-35:64
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:35:13-62
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:34:13-46
 service#com.cwnu.ttpodmusic.service.MusicPlayService
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:37:9-69
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:37:9-60
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:37:18-58
 service#com.cwnu.ttpodmusic.service.DownLoadService
@@ -98,36 +98,36 @@ ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:38:9-60
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:38:18-57
 activity#com.cwnu.ttpodmusic.PlayWayActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:40:9-42:72
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:40:9-42:62
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:42:13-60
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:41:13-44
 activity#com.cwnu.ttpodmusic.SettingActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:43:9-45:71
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:43:9-45:61
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:45:13-59
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:44:13-44
 activity#com.cwnu.ttpodmusic.HelpActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:46:9-48:68
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:46:9-48:58
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:48:13-56
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:47:13-41
 activity#com.cwnu.ttpodmusic.FileActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:49:9-51:68
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:49:9-51:58
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:51:13-56
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:50:13-41
 activity#com.cwnu.ttpodmusic.DownloadManageActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:52:9-54:79
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:52:9-54:69
 	android:label
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:54:13-67
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:53:13-51
 activity#com.cwnu.ttpodmusic.MyMusicActivity
-ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:55:9-62
+ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:55:9-52
 	android:name
 		ADDED from E:\jetBrains\android\music\app\src\main\AndroidManifest.xml:55:19-50

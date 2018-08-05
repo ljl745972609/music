@@ -141,7 +141,7 @@ public class MainActivity extends FragmentActivity {
 				fm = new TaoGeFragment();
 				break;
 			case 2:
-				fm = new SearchFragment();
+				fm = new SearchFragment(MainActivity.this);
 				RelativeLayout rl_main_bottom = (RelativeLayout) findViewById(R.id.rl_main_bottom);
 				rl_main_bottom.setVisibility(View.GONE);
 				break;

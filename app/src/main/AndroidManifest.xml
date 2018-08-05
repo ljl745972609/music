@@ -32,27 +32,27 @@
         </activity>
         <activity
             android:name=".MusicPlayActivity"
-            android:label="@string/title_activity_music_play"></activity>
+            android:label="@string/title_activity_music_play"/>
 
-        <service android:name=".service.MusicPlayService"></service>
+        <service android:name=".service.MusicPlayService"/>
         <service android:name=".service.DownLoadService" />
 
         <activity
             android:name=".PlayWayActivity"
-            android:label="@string/title_activity_play_way"></activity>
+            android:label="@string/title_activity_play_way"/>
         <activity
             android:name=".SettingActivity"
-            android:label="@string/title_activity_setting"></activity>
+            android:label="@string/title_activity_setting"/>
         <activity
             android:name=".HelpActivity"
-            android:label="@string/title_activity_help"></activity>
+            android:label="@string/title_activity_help"/>
         <activity
             android:name=".FileActivity"
-            android:label="@string/title_activity_file"></activity>
+            android:label="@string/title_activity_file"/>
         <activity
             android:name=".DownloadManageActivity"
-            android:label="@string/title_activity_download_manage"></activity>
-        <activity android:name=".MyMusicActivity"></activity>
+            android:label="@string/title_activity_download_manage"/>
+        <activity android:name=".MyMusicActivity"/>
     </application>
 
 </manifest>

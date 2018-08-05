@@ -13,5 +13,9 @@ public interface Constat {
 
     // 广播过滤器
     String DOWNLOAD_FLAG = "download";
+    String DOWNLOAD_FAIL_FLAG = "download_fail";        // 下载失败广播
+    String DOWNLOAD_SUCCESS_FLAG = "download_success";      // 下载成功广播
+
+
 
 }

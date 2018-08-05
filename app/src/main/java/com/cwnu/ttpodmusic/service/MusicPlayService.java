@@ -14,28 +14,28 @@ import android.os.Environment;
 import android.os.IBinder;
 
 /**
- * Service:AndroidËÄ´óºËĞÄ×é¼şÖ®Ò» Ö÷ÒªÊµÏÖ¸èÇúµÄ²¥·Å£¬ÔİÍ££¬ÉÏÒ»Ê×£¬ÏÂÒ»Ê×£¬seekBarµÄ²Ù×÷µÈºÄÊ±²Ù×÷
+ * Service:Android??????????? ????????????????????????????????seekBar?????????????
  * 
  * @author DELL
  * 
  */
 public class MusicPlayService extends Service {
 
-	// ¸èÇú×ÊÔ´
+	// ???????
 	private ArrayList<String> musics;
-	// Ã½Ìå²¥·Å¹¤¾ß
+	// ??å²¥?????
 	private MediaPlayer player;
-	// ¸èÇúËùÔÚµÄSD¿¨Â·¾¶
+	// ?????????SD??Â·??
 	private File dir = null;
-	// ×¢²á¹ã²¥½ÓÊÕÆ÷µÄ¶ÔÏó
+	// ???????????????
 	private BroadcastReceiver receiver;
-	// µ±Ç°¸èÇúµÄÏÂ±ê
+	// ??????????Â±?
 	private int currentMusicIndex = 0;
-	// ÔİÍ£Î»ÖÃ
+	// ???Î»??
 	private int pausePosition;
-	// ¿ØÖÆÁ÷³ÌµÄ²¼¶ûÀàĞÍ±äÁ¿
+	// ???????????????????
 	private boolean isRunning;
-	//²¼¶ûÀàĞÍ±äÁ¿ÅĞ¶Ï¸èÇúÊÇ·ñÕıÔÚ²¥·Å
+	//????????????Ğ¶??????????????
 	private boolean isStarted;
 
 	@Override
@@ -46,26 +46,26 @@ public class MusicPlayService extends Service {
 		dir = Environment
 				.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
 		receiver = new MyActivityReceiver();
-		// ¹ã²¥¹ıÂËÆ÷
+		// ????????
 		IntentFilter filter = new IntentFilter();
-		// ¸ù¾İÍâºÅÀ´½øĞĞ¹ıÂË
+		// ????????????Ğ¹???
 		filter.addAction("CurrentMusicIndex");
 		filter.addAction("PlayMusicPrevious");
 		filter.addAction("PlayMusicNext");
 		filter.addAction("MakeMusicPlayOrPause");
 		filter.addAction("CurrentMusicPosition");
-		// ×¢²á¹ã²¥½ÓÊÕÆ÷
+		// ??????????
 		registerReceiver(receiver, filter);
-		//¿ªÆô¹¤×÷Ïß³Ì·¢ËÍ¹ã²¥£¬Ã¿¸ôÒ»Ãë·¢ËÍÒ»´Î¹ã²¥
+		//???????????????????????????Î¹?
 		isRunning = true;
 		new UpdateProgressThread().start();
-		//Ñ­»·²¥·Å
+		//???????
 		player.setOnCompletionListener(new OnCompletionListener() {
 			
 			@Override
 			public void onCompletion(MediaPlayer mp) {
 				// TODO Auto-generated method stub
-				//²¥·ÅÏÂÒ»Ê×
+				//?????????
 				if(isStarted){
 					next();
 				}
@@ -77,7 +77,7 @@ public class MusicPlayService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// TODO Auto-generated method stub
-		// »ñÈ¡intentÀïÃæ´«µİ¹ıÀ´µÄ¸èÇú
+		// ???intent???æ´«??????????
 		musics = intent.getStringArrayListExtra("musics");
 		return super.onStartCommand(intent, flags, startId);
 	}
@@ -88,26 +88,26 @@ public class MusicPlayService extends Service {
 		return null;
 	}
 
-	// ²¥·Å
+	// ????
 	public void play() {
 		
-		// ÖØÖÃ²¥·Å¹¤¾ß
+		// ???Ã²??????
 		player.reset();
-		// ÉèÖÃ²¥·Å×ÊÔ´
+
 		try {
 			player.setDataSource(dir + "/" + musics.get(currentMusicIndex));
-			// ×¼±¸²¥·Å
+			// ???????
 			player.prepare();
-			// ÒÆ¶¯µ½ÔİÍ£Î»ÖÃ
+			// ????????Î»??
 			player.seekTo(pausePosition);
-			// ¿ªÊ¼²¥·Å
+			// ???????
 			player.start();
 			isStarted = true;
-			// ·¢ËÍ¹ã²¥£¬¸æËßActivity È¥¸Ä±ä°´Å¥µÄ×´Ì¬ÎªÔİÍ£
+			// ???????????Activity ?????????????
 			Intent intent = new Intent("setImagePause");
 			sendBroadcast(intent);
 
-			// ·¢ËÍ¹ã²¥£¬Ğ¯´ø¸èÇúÃû³ÆºÍ¸èÇú×ÜÊ±³¤
+			// ???????Ğ¯???????????????????
 			Intent intent1 = new Intent("MusicName&MusicTotalTime");
 			intent1.putExtra("MusicName", musics.get(currentMusicIndex)
 					.toString());
@@ -119,20 +119,20 @@ public class MusicPlayService extends Service {
 		}
 	}
 
-	// ÔİÍ£
+	// ???
 	public void pause() {
 		if (player.isPlaying()) {
 			player.pause();
-			// »ñÈ¡¸èÇúÔİÍ£Î»ÖÃ
+			// ??????????Î»??
 			pausePosition = player.getCurrentPosition();
-			// ·¢ËÍ¹ã²¥£¬¸Ä±ä²¥·Å°´Å¥Í¼±ê ÉèÖÃ²¥·ÅÔòÎªÈı½Ç·ûºÅ
+			// ????????????????? ???Ã²?????????????
 			Intent intent = new Intent("SetImgPlay");
 			sendBroadcast(intent);
 
 		}
 	}
 
-	// ÉÏÒ»Ê×
+	// ?????
 	public void previous() {
 		currentMusicIndex--;
 		if (currentMusicIndex < 0) {
@@ -143,7 +143,7 @@ public class MusicPlayService extends Service {
 
 	}
 
-	// ÏÂÒ»Ê×
+	// ?????
 	public void next() {
 		currentMusicIndex++;
 		if (currentMusicIndex > musics.size() - 1) {
@@ -153,38 +153,38 @@ public class MusicPlayService extends Service {
 		play();
 	}
 
-	// ¹ã²¥½ÓÊÕÆ÷¡£×¨ÃÅ½ÓÊÕActivity½ÓÊÕÀ´µÄ¹ã²¥
+	// ????????????????Activity?????????
 	class MyActivityReceiver extends BroadcastReceiver {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			// TODO Auto-generated method stub
-			// ½ÓÊÕ¹ã²¥(½ÓÊÕËùÓĞ¹ıÂËµ½µÄ¹ã²¥£¬¾ÍÊÇ×Ö·û´®)
+			// ?????(???????Ğ¹??????????????????)
 			String action = intent.getAction();
 			if ("CurrentMusicIndex".equals(action)) {
-				// È¡µ½Ğ¯´øµÄ¸èÇúµÄÏÂ±ê È¡²»µ½Ê±ºò²¥·ÅµÚ0Ê×¸è
+				// ???Ğ¯??????????Â±? ??????????0???
 				currentMusicIndex = intent.getIntExtra("position", 0);
 				pausePosition = 0;
-				// ²¥·Å¸èÇú
+				// ???????
 				play();
 			} else if ("PlayMusicPrevious".equals(action)) {
-				// ²¥·ÅÉÏÒ»Ê×
+				// ?????????
 				previous();
 			} else if ("PlayMusicNext".equals(action)) {
-				// ²¥·ÅÏÂÒ»Ê×
+				// ?????????
 				next();
 			} else if ("MakeMusicPlayOrPause".equals(action)) {
-				// Ê¹ÒôÀÖ²¥·Å»òÕßÔİÍ£
+				// ??????????????
 				if (player.isPlaying()) {
 					pause();
 				} else {
 					play();
 				}
 			}else if ("CurrentMusicPosition".equals(action)) {
-				//ÄÃµ½seekbarÍ£Ö¹ºóµÄÎ»ÖÃ
+				//???seekbar?????Î»??
 				int percent = intent.getIntExtra("seekbarPosition", 0);
 				pausePosition = percent * player.getDuration()/100;
-				//·¢ËÍ¹ã²¥
+				//?????
 				Intent intent1 = new Intent("seekToPausePosition");
 				intent1.putExtra("seekPostion",pausePosition);
 				sendBroadcast(intent1);
@@ -202,11 +202,11 @@ public class MusicPlayService extends Service {
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		// ½Ó´¥×¢²á¹ã²¥½ÓÊÕÆ÷
+		// ?????????????
 		unregisterReceiver(receiver);
 	}
 
-	// ¿ªÆô¹¤×÷Ïß³Ì¡£Ã¿¸ôÒ»ÃëÖÓ·¢ËÍÒ»´Îµ±Ç°¸èÇúÎ»ÖÃµÄ¹ã²¥
+	// ?????????????????????????Îµ??????Î»????
 	class UpdateProgressThread extends Thread {
 		Intent intent = new Intent("UpdateProgress");
 
@@ -215,10 +215,10 @@ public class MusicPlayService extends Service {
 			// TODO Auto-generated method stub
 			while (isRunning) {
 				if (player.isPlaying()) {
-					// Ã¿¸ôÒ»ÃëÖÓ·¢ËÍÒ»´Î¹ã²¥
+					// ?????????????Î¹?
 					try {
 						Thread.sleep(1000);
-						// Ğ¯´øÊı¾İ£¬µ±Ç°¸èÇú²¥·ÅµÄÎª°®
+						// Ğ¯??????????????????????
 						intent.putExtra("currentPosition",
 								player.getCurrentPosition());
 						sendBroadcast(intent);
