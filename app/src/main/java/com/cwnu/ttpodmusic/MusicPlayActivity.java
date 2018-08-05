@@ -33,35 +33,35 @@ import com.cwnu.ttpodmusic.utils.Global;
 
 public class MusicPlayActivity extends Activity {
 
-	// ÉùÃ÷¿Ø¼ş
+	// å£°æ˜æ§ä»¶
 	private ListView lv;
-	//»ØÍËImg
+	//å›é€€Img
 	private ImageView img;
-	// Êı¾İÔ´
+	// æ•°æ®æº
 	ArrayList<String> musics = null;
-	// »ñÈ¡¸èÇúËùÔÚµÄÂ·¾¶
+	// è·å–æ­Œæ›²æ‰€åœ¨çš„è·¯å¾„
 	private File dir = null;
 	private BroadcastReceiver receiver;
-	//²¥·Å»òÔİÍ£°´Å¥
+	//æ’­æ”¾æˆ–æš‚åœæŒ‰é’®
 	private ImageButton imbPlay;
-	//ÉÏÒ»Ê×°´Å¥
+	//ä¸Šä¸€é¦–æŒ‰é’®
 	private ImageButton imbPrevious;
-	//ÏÂÒ»Ê×°´Å¥
+	//ä¸‹ä¸€é¦–æŒ‰é’®
 	private ImageButton imbNext;
-	//¸èÇúÃû³Æ
+	//æ­Œæ›²åç§°
 	private TextView tvMusicName;
-	//¸èÇú×ÜÊ±³¤
+	//æ­Œæ›²æ€»æ—¶é•¿
 	private TextView tvTotalTime;
-	//¸èÇúµ±Ç°Ê±¼ä
+	//æ­Œæ›²å½“å‰æ—¶é—´
 	private TextView tvCurrentTime;
-	//½ø¶ÈÌõ
+	//è¿›åº¦æ¡
 	private SeekBar sb;
-	//²à»¬²Ëµ¥
+	//ä¾§æ»‘èœå•
 	private ListView lvDrawer;
 	private ImageView imgDrawer;
-	//³éÌë²¼¾Ö
+	//æŠ½å±‰å¸ƒå±€
 	private DrawerLayout drawer;
-	//ËÑË÷
+	//æœç´¢
 	private ImageView imgListSearch;
 
 	@Override
@@ -69,17 +69,17 @@ public class MusicPlayActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_music_play);
 		setupView();
-		// Ìí¼Ó¼àÌıÆ÷
+		// æ·»åŠ ç›‘å¬å™¨
 		addListener();
 		receiver = new MyServiceReceiver();
-		//¹ã²¥¹ıÂËÆ÷
+		//å¹¿æ’­è¿‡æ»¤å™¨
 		IntentFilter filter = new IntentFilter();
 		filter.addAction("setImagePause");
 		filter.addAction("SetImgPlay");
 		filter.addAction("MusicName&MusicTotalTime");
 		filter.addAction("UpdateProgress");
 		filter.addAction("seekToPausePosition");
-		//×¢²á¹ã²¥½ÓÊÕÆ÷
+		//æ³¨å†Œå¹¿æ’­æ¥æ”¶å™¨
 		registerReceiver(receiver, filter);
 	}
 
@@ -89,37 +89,37 @@ public class MusicPlayActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Log.i("TAG","ÕıÔÚËÑË÷");
+				Log.i("TAG","æ­£åœ¨æœç´¢");
 				
 			}
 		});
-		//¸ø³éÌëÌí¼Ó¼àÌıÊÂ¼ş
+		//ç»™æŠ½å±‰æ·»åŠ ç›‘å¬äº‹ä»¶
 		lvDrawer.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				//¹Ø±Õ³éÌë
+				//å…³é—­æŠ½å±‰
 				drawer.closeDrawer(lvDrawer);
 				switch (position) {
 				case 2:
-					//ÊµÏÖ»»·ô
+					//å®ç°æ¢è‚¤
 					drawer.setBackgroundResource(imgs[getThemeBg()]);
 					lvDrawer.setBackgroundResource(imgs[index]);
 					break;
 				case 1:
-					//²¥·ÅÄ£Ê½
+					//æ’­æ”¾æ¨¡å¼
 					Intent intent = new Intent(MusicPlayActivity.this,PlayWayActivity.class);
 					startActivity(intent);
 					break;
 				case 4:
-					//²¥·ÅÄ£Ê½
+					//æ’­æ”¾æ¨¡å¼
 					Intent intent1 = new Intent(MusicPlayActivity.this,SettingActivity.class);
 					startActivity(intent1);
 					break;
 				case 6:
-					//²¥·ÅÄ£Ê½
+					//æ’­æ”¾æ¨¡å¼
 					Intent intent6 = new Intent(MusicPlayActivity.this,HelpActivity.class);
 					startActivity(intent6);
 					break;
@@ -135,7 +135,7 @@ public class MusicPlayActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//´ò¿ª³éÌë
+				//æ‰“å¼€æŠ½å±‰
 				drawer.openDrawer(lvDrawer);
 				
 			}
@@ -144,7 +144,7 @@ public class MusicPlayActivity extends Activity {
 			
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub  //ÒªµÄÊÇ·Ö×Ó
+				// TODO Auto-generated method stub  //è¦çš„æ˜¯åˆ†å­
 				int percent = seekBar.getProgress();
 				Intent intent = new Intent("CurrentMusicPosition");
 				intent.putExtra("seekbarPosition", percent);
@@ -169,7 +169,7 @@ public class MusicPlayActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//·¢ËÍ¹ã²¥¸øServiceÈ¥²¥·ÅÉÏÒ»Ê×
+				//å‘é€å¹¿æ’­ç»™Serviceå»æ’­æ”¾ä¸Šä¸€é¦–
 				Intent intent = new Intent("PlayMusicPrevious");
 				sendBroadcast(intent);
 			}
@@ -179,7 +179,7 @@ public class MusicPlayActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//·¢ËÍ¹ã²¥¸øServiceÈ¥²¥·ÅÏÂÒ»Ê×
+				//å‘é€å¹¿æ’­ç»™Serviceå»æ’­æ”¾ä¸‹ä¸€é¦–
 				Intent intent = new Intent("PlayMusicNext");
 				sendBroadcast(intent);
 			}
@@ -189,7 +189,7 @@ public class MusicPlayActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//·¢ËÍ¹ã²¥¸æËßService²¥·Å»òÕßÔİÍ£
+				//å‘é€å¹¿æ’­å‘Šè¯‰Serviceæ’­æ”¾æˆ–è€…æš‚åœ
 				Intent intent = new Intent("MakeMusicPlayOrPause");
 				sendBroadcast(intent);
 			}
@@ -200,14 +200,14 @@ public class MusicPlayActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				// ·¢ËÍ¹ã²¥£¬Ğ¯´øµ±Ç°±»µãÖĞ¸èÇúµÄÏÂ±ê CurrentMusicIndex ¹ã²¥Ãû×Ô¼ºÈ¡
+				// å‘é€å¹¿æ’­ï¼Œæºå¸¦å½“å‰è¢«ç‚¹ä¸­æ­Œæ›²çš„ä¸‹æ ‡ CurrentMusicIndex å¹¿æ’­åè‡ªå·±å–
 				Intent intent = new Intent("CurrentMusicIndex");
-				//Ğ¯´øÊı¾İ£¨¸èÇúÏÂ±ê£©
+				//æºå¸¦æ•°æ®ï¼ˆæ­Œæ›²ä¸‹æ ‡ï¼‰
 				intent.putExtra("position", position);
 				sendBroadcast(intent);
 			}
 		});
-		// ¸øImageViewÌí¼Ó»ØÍË¹¦ÄÜ
+		// ç»™ImageViewæ·»åŠ å›é€€åŠŸèƒ½
 		img.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -237,77 +237,77 @@ public class MusicPlayActivity extends Activity {
 		musics = new ArrayList<String>();
 		dir = Environment
 				.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
-		// ËùÓĞ¸èÇúÎÄ¼ş
-		File[] files = dir.listFiles(); // ÁĞ¾ÙdirÀïÃæËùÓĞÎÄ¼ş
+		// æ‰€æœ‰æ­Œæ›²æ–‡ä»¶
+		File[] files = dir.listFiles(); // åˆ—ä¸¾diré‡Œé¢æ‰€æœ‰æ–‡ä»¶
 		if (files != null) {
 			for (int i = 0; i < files.length; i++) {
 				musics.add(files[i].getName());
 			}
 		}
-		// ½È×ÓÏÂ¹ø
+		// é¥ºå­ä¸‹é”…
 		MyAdapter adapter = new MyAdapter(musics, this);
 		lv.setAdapter(adapter);
-		// Æô¶¯·şÎñÈ¥Ö´ĞĞºÄÊ±²Ù×÷
+		// å¯åŠ¨æœåŠ¡å»æ‰§è¡Œè€—æ—¶æ“ä½œ
 		Intent intent = new Intent(MusicPlayActivity.this,
 				MusicPlayService.class);
-		// Ğ¯´øÊı¾İ
+		// æºå¸¦æ•°æ®
 		intent.putStringArrayListExtra("musics", musics);
 		startService(intent);
 		
-		//²à»¬²Ëµ¥µÄÊı¾İÔ´
-		String[] strsDrawer = {"µÇÂ¼","²¥·ÅÄ£Ê½","¸öĞÔ»»·ô","·ÖÏí","ÉèÖÃ","ÍË³öµÇÂ¼","°ïÖú","¸öÈËÖĞĞÄ"};
-		//AdapterÊÊÅäÆ÷
+		//ä¾§æ»‘èœå•çš„æ•°æ®æº
+		String[] strsDrawer = {"ç™»å½•","æ’­æ”¾æ¨¡å¼","ä¸ªæ€§æ¢è‚¤","åˆ†äº«","è®¾ç½®","é€€å‡ºç™»å½•","å¸®åŠ©","ä¸ªäººä¸­å¿ƒ"};
+		//Adapteré€‚é…å™¨
 		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, strsDrawer);
-		//½È×ÓÏÂ¹ø
+		//é¥ºå­ä¸‹é”…
 		lvDrawer.setAdapter(adapter1);
-		//ÉèÖÃ±³¾°
+		//è®¾ç½®èƒŒæ™¯
 		drawer.setBackgroundResource(imgs[index]);
 		lvDrawer.setBackgroundResource(imgs[index]);
 	}
-	//¹ã²¥½ÓÊÕÆ÷£¬×¨ÃÅ½ÓÊÕService·¢À´µÄ¹ã²¥
+	//å¹¿æ’­æ¥æ”¶å™¨ï¼Œä¸“é—¨æ¥æ”¶Serviceå‘æ¥çš„å¹¿æ’­
 	class MyServiceReceiver extends BroadcastReceiver{
 
 		int totalTime = 0;
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			// TODO Auto-generated method stub
-			//ÄÃµ½ËùÓĞ¹ıÂËµ½µÄ¹ã²¥
+			//æ‹¿åˆ°æ‰€æœ‰è¿‡æ»¤åˆ°çš„å¹¿æ’­
 			String action = intent.getAction();
 			if("setImagePause".equals(action)){
-				//¸Ä±ä°´Å¥Í¼±êÎªÔİÍ£
+				//æ”¹å˜æŒ‰é’®å›¾æ ‡ä¸ºæš‚åœ
 				imbPlay.setImageResource(android.R.drawable.ic_media_pause);
 			}else if ("SetImgPlay".equals(action)) {
-				//¸Ä±ä°´Å¥Í¼±êÎª²¥·Å
+				//æ”¹å˜æŒ‰é’®å›¾æ ‡ä¸ºæ’­æ”¾
 				imbPlay.setImageResource(android.R.drawable.ic_media_play);
 			}else if ("MusicName&MusicTotalTime".equals(action)) {
-				//»ñÈ¡¸èÇúÃû³Æ
+				//è·å–æ­Œæ›²åç§°
 				String musicName = intent.getStringExtra("MusicName");
-				tvMusicName.setText("ÕıÔÚ²¥·Å£º"+musicName);
-				//»ñÈ¡¸èÇú×ÜÊ±³¤
+				tvMusicName.setText("æ­£åœ¨æ’­æ”¾ï¼š"+musicName);
+				//è·å–æ­Œæ›²æ€»æ—¶é•¿
 				totalTime = intent.getIntExtra("MusicTotalTime", 1);
 				String strTotalTime = Global.setTime(totalTime);
-				//ÏÔÊ¾¸èÇú×ÜÊ±³¤
+				//æ˜¾ç¤ºæ­Œæ›²æ€»æ—¶é•¿
 				tvTotalTime.setText(strTotalTime);
 			}else if ("UpdateProgress".equals(action)) {
-				//Ã¿¸ôÒ»ÃëÖÓÏÔÊ¾Ò»´Îµ±Ç°Ê±¼ä
+				//æ¯éš”ä¸€ç§’é’Ÿæ˜¾ç¤ºä¸€æ¬¡å½“å‰æ—¶é—´
 				int currentTime = intent.getIntExtra("currentPosition", 0);
 				String strCurrentTime = Global.setTime(currentTime);
-				//ÏÔÊ¾Ê±¼ä
+				//æ˜¾ç¤ºæ—¶é—´
 				tvCurrentTime.setText(strCurrentTime);
-				//ÉèÖÃ½ø¶ÈÌõ
-				//»ñÈ¡½ø¶ÈÌõÎ»ÖÃ
+				//è®¾ç½®è¿›åº¦æ¡
+				//è·å–è¿›åº¦æ¡ä½ç½®
 				if (totalTime != 0) {
 					int percent = currentTime*100/totalTime;
-					//ÉèÖÃseekbar½ø¶È
+					//è®¾ç½®seekbarè¿›åº¦
 					sb.setProgress(percent++);
 					
 				}
 				
 			}else if ("seekToPausePosition".equals(action)) {
-				//È¡µ½µ±Ç°Ê±¼ä£¬ÖØĞÂÉèÖÃ
+				//å–åˆ°å½“å‰æ—¶é—´ï¼Œé‡æ–°è®¾ç½®
 				int currenttime = intent.getIntExtra("seekPostion", 0);
 				String strCurrentTime = Global.setTime(currenttime);
-				//ÏÔÊ¾Ê±¼ä
+				//æ˜¾ç¤ºæ—¶é—´
 				tvCurrentTime.setText(strCurrentTime);
 			}
 		}
@@ -316,16 +316,16 @@ public class MusicPlayActivity extends Activity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		//½Ó´¥×¢²á
+		//æ¥è§¦æ³¨å†Œ
 		unregisterReceiver(receiver);
 	}
-	//ÄÃµ½Ëæ»ú»»·ôµÄÍ¼Æ¬×ÊÔ´
+	//æ‹¿åˆ°éšæœºæ¢è‚¤çš„å›¾ç‰‡èµ„æº
 	int[] imgs = {
 			R.drawable.backgroud,R.drawable.bg1,R.drawable.bg2
 	};
-	//Ëæ»úµÄÏÂ±ê
+	//éšæœºçš„ä¸‹æ ‡
 	private static int index;
-	//Ëæ»úµ½¸öĞÔÆ¤·ôµÄÏÂ±ê
+	//éšæœºåˆ°ä¸ªæ€§çš®è‚¤çš„ä¸‹æ ‡
 	public int getThemeBg(){
 		Random random = new Random();
 		index = random.nextInt(imgs.length);

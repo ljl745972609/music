@@ -1,18 +1,26 @@
 package com.cwnu.ttpodmusic.fragment;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,6 +35,26 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cwnu.ttpodmusic.R;
+import com.cwnu.ttpodmusic.adapter.SongsAdapter;
+import com.cwnu.ttpodmusic.entity.Songs;
+import com.cwnu.ttpodmusic.utils.Constat;
+import com.cwnu.ttpodmusic.utils.JsonUtil;
+import com.cwnu.ttpodmusic.utils.OkHttpUtil;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONObject;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -35,26 +63,40 @@ import com.cwnu.ttpodmusic.R;
 public class SearchFragment extends Fragment {
 
 	View view = null;
-	// ÉùÃ÷¿Ø¼ş
-	ArrayAdapter<String> adapter = null;
-	// É¾³ıÍ¼Æ¬
+
+
 	private ImageView imgSearchDelete;
-	// ±à¼­¿ò
+
 	private EditText etSearchDelete;
-	// "ËÑË÷"ÎÄ±¾
+
 	private TextView tvSearch;
 
-	// ½È×ÓÆ¤
 	private ListView lvSearch;
-	// Êı¾İÔ´
-	ArrayList<String> musics = null;
-	// »ñÈ¡¸èÇúËùÔÚµÄÂ·¾¶
-	private File dir = null;
-	private Object receiver;
-	
+
+	private List<Songs> list;
+
+
+	@SuppressLint("HandlerLeak")
+	private Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what){
+				case 0x001:
+					if(list!=null){
+						Log.i(TAG, "handleMessage: "+list.size());
+						SongsAdapter adapter = new SongsAdapter(getActivity(),list);
+						lvSearch.setAdapter(adapter);
+					}
+					break;
+				case 0x002:
+					Toast.makeText(getActivity(),"æ²¡æœ‰æ‰¾åˆ°æ­Œæ›²ï¼Œè¯·æ¢ä¸€ä¸ªæœç´¢è¯å§^_^",Toast.LENGTH_SHORT).show();
+					break;
+			}
+		}
+	};
 
 	public SearchFragment() {
-		// Required empty public constructor
+
 
 	}
 
@@ -65,96 +107,73 @@ public class SearchFragment extends Fragment {
 		view = inflater.inflate(R.layout.fragment_search, container, false);
 		setupView();
 		addListener();
-		
-		Object filter;
-		/*//¹ã²¥¹ıÂËÆ÷
-		IntentFilter filter = new IntentFilter();*/
-		//×¢²á¹ã²¥½ÓÊÕÆ÷
-		/*registerReceiver(receiver, filter);*/
+
 		return view;
 	}
 
-	// ¸øÉ¾³ıÍ¼Æ¬Ìí¼Ó¼àÌı
 	private void addListener() {
 		
 		imgSearchDelete.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// °ÑEditTextÄÚÈİÉèÖÃÎª¿Õ
+				// æŠŠEditTextå†…å®¹è®¾ç½®ä¸ºç©º
 				etSearchDelete.setText("");
-				// °ÑListViewÒş²Ø
+				// æŠŠListViewéšè—
 				lvSearch.setVisibility(View.GONE);
 			}
 		});
-		// EditTextÌí¼Ó¼àÌı
+		// EditTextæ·»åŠ ç›‘å¬
 		etSearchDelete.addTextChangedListener(new TextWatcher() {
-			// ÎÄ±¾¸Ä±ä
+			// æ–‡æœ¬æ”¹å˜
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				// Èç¹û³¤¶ÈÎª0
+				// å¦‚æœé•¿åº¦ä¸º0
 				if (s.length() == 0) {
-					// Òş²Ø¡°É¾³ıÍ¼Æ¬¡±
+
 					imgSearchDelete.setVisibility(View.GONE);
 				} else {
-					// ÏÔÊ¾¡°É¾³ıÍ¼Æ¬¡±
+
 					imgSearchDelete.setVisibility(View.VISIBLE);
-					// ÏÔÊ¾ListView
-					ShowListView();
 				}
-				
-				adapter.getFilter().filter(s);
-				
 			}
 
-			private void ShowListView() {
-				// TODO Auto-generated method stub
-
-			}
-
-			// ÎÄ±¾¸Ä±äÖ®Ç°Ö´ĞĞ
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
+					int after) {}
 
-			}
-
-			// ÎÄ±¾¸Ä±äÖ®ºóÖ´ĞĞ
 			@Override
-			public void afterTextChanged(Editable s) {
-				// TODO Auto-generated method stub
-
-			}
+			public void afterTextChanged(Editable s) {}
 		});
-		// ¸ø"ËÑË÷"textViewÌí¼Ó¼àÌı
+		// ç»™"æœç´¢"textViewæ·»åŠ ç›‘å¬
 		tvSearch.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (etSearchDelete.getText().toString().trim() != null) {
-					Toast.makeText(getActivity(), "ÕıÔÚ²éÕÒ", Toast.LENGTH_SHORT)
-							.show();
+					Toast.makeText(getActivity(), "searching", Toast.LENGTH_SHORT).show();
+					new Thread(new Runnable() {
+						public void run() {
+							getSongsInfo(etSearchDelete.getText().toString().trim());
+						}
+					}).start();
 				} else {
-
-					Toast.makeText(getActivity(), "ÊäÈëÄÚÈİ", Toast.LENGTH_SHORT)
-							.show();
+					Toast.makeText(getActivity(), "please input context", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
-		//¸øListViewÌí¼Óµã»÷ÊÂ¼ş
+		//ç»™ListViewæ·»åŠ ç‚¹å‡»äº‹ä»¶
 		lvSearch.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// TODO Auto-generated method stub
-				// ·¢ËÍ¹ã²¥£¬Ğ¯´øµ±Ç°±»µãÖĞ¸èÇúµÄÏÂ±ê CurrentMusicIndex ¹ã²¥Ãû×Ô¼ºÈ¡
+				// å‘é€å¹¿æ’­ï¼Œæºå¸¦å½“å‰è¢«ç‚¹ä¸­æ­Œæ›²çš„ä¸‹æ ‡ CurrentMusicIndex å¹¿æ’­åè‡ªå·±å–
 				Intent intent = new Intent("CurrentMusicIndex");
-				//Ğ¯´øÊı¾İ£¨¸èÇúÏÂ±ê£©
+				//æºå¸¦æ•°æ®ï¼ˆæ­Œæ›²ä¸‹æ ‡ï¼‰
 				intent.putExtra("position", position);
-				 
+
 			}
 		});
 	}
@@ -165,34 +184,55 @@ public class SearchFragment extends Fragment {
 		etSearchDelete = (EditText) view.findViewById(R.id.et_search);
 		lvSearch = (ListView) view.findViewById(R.id.lv_search);
 		tvSearch = (TextView) view.findViewById(R.id.tv_search_seacher);
-		// ÉèÖÃetSearchDelete¹â±êÏÔÊ¾µÄÑÕÉ«
+		// è®¾ç½®etSearchDeleteå…‰æ ‡æ˜¾ç¤ºçš„é¢œè‰²
 		etSearchDelete.setHintTextColor(999999);
+	}
 
-		// °ü½È×Ó
-		musics = new ArrayList<String>();
-		dir = Environment
-				.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
-		// ËùÓĞ¸èÇúÎÄ¼ş
-		File[] files = dir.listFiles(); // ÁĞ¾ÙdirÀïÃæËùÓĞÎÄ¼ş
-		if (files != null) {
-			for (int i = 0; i < files.length; i++) {
-				musics.add(files[i].getName());
+	private String getSongsInfo(final String song){
+		String result = "";
+		FormBody body = new FormBody.Builder()
+					.add("hlpretag","")
+					.add("hlposttag", "")
+					.add("s",song)
+					.add("type","1")
+					.add("offset","0")
+					.add("total","true")
+					.add("limit","20")
+					.build();
+		OkHttpClient client = new OkHttpClient();
+		Request request = new Request.Builder()
+				.url(Constat.SEARCH_SONG_URL)
+				.post(body)
+				.build();
+		Call call = client.newCall(request);
+		call.enqueue(new Callback() {
+			@Override
+			public void onFailure(Call call, IOException e) {
+				Log.i(TAG, "onFailure: å‘é€çš„è¯·æ±‚é”™è¯¯");
+
+				Message msg = new Message();
+				msg.what = 0x002;
+				mHandler.sendMessage(msg);
 			}
-		}
 
-		// ×Ô´ø½È×ÓÆ¤android.R.layout lists:½È×ÓÏÚ
-		adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),
-				android.R.layout.simple_list_item_1, musics);
-		// ½È×ÓÏÂ¹ø
-		lvSearch.setAdapter(adapter);
-	}
-	class MyFragementReceiver extends BroadcastReceiver{
+			@Override
+			public void onResponse(Call call, Response response) throws IOException {
+				String result = response.body().string();		// è·å–è¿”å›ä½“
+				Log.i(TAG, "onResponse: "+result);
+				JsonObject jsonObject = new JsonParser().parse(result).getAsJsonObject();
 
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			// TODO Auto-generated method stub
-			
-		}
-		
+				list = JsonUtil.getSongsList(jsonObject);
+				Message msg;
+				// é€šçŸ¥ä¸»çº¿ç¨‹æ›´æ–°ç•Œé¢
+				msg = new Message();
+				msg.what = 0x001;
+				mHandler.sendMessage(msg);
+			}
+		});
+		return result;
 	}
+
+
+
+
 }

@@ -13,22 +13,22 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 /**
- * ÊÊÅäÆ÷Àà
- * Êı¾İÔ´ºÍitem²¼¾Ö×éºÏ£¨BaseAdapter³éÏóÀà£©
+ * é€‚é…å™¨ç±»
+ * æ•°æ®æºå’Œitemå¸ƒå±€ç»„åˆï¼ˆBaseAdapteræŠ½è±¡ç±»ï¼‰
  * @author DELL
  *
  */
 public class MyAdapter extends BaseAdapter{
 
-	//Êı¾İÔ´
+	//æ•°æ®æº
 	private ArrayList<String> musics;
-	//item²¼¾Ö
-	private LayoutInflater inflate;  //ÊÓÍ¼À©³äÆ÷ ÄÃ²¼¾ÖÎÄ¼ş
+	//itemå¸ƒå±€
+	private LayoutInflater inflate;  //è§†å›¾æ‰©å……å™¨ æ‹¿å¸ƒå±€æ–‡ä»¶
 	public MyAdapter(ArrayList<String> musics,Context context){
-		this.musics = musics;   //this.musicsÖ¸Ïòprivate List<String> musics;   musicsÖ¸Ïò²ÎÊımusic
+		this.musics = musics;   //this.musicsæŒ‡å‘private List<String> musics;   musicsæŒ‡å‘å‚æ•°music
 		this.inflate = LayoutInflater.from(context);
 	}
-	//»ñÈ¡item¸öÊı
+	//è·å–itemä¸ªæ•°
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
@@ -47,7 +47,7 @@ public class MyAdapter extends BaseAdapter{
 		return 0;
 	}
 
-	//»ñÈ¡Ä³Ò»¸öitemÁĞ±íÏî£¨°üºÃÄ³Ò»¸ö½È×Ó£©
+	//è·å–æŸä¸€ä¸ªitemåˆ—è¡¨é¡¹ï¼ˆåŒ…å¥½æŸä¸€ä¸ªé¥ºå­ï¼‰
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
@@ -55,19 +55,19 @@ public class MyAdapter extends BaseAdapter{
 		if(convertView==null){
 			convertView = inflate.inflate(R.layout.item_layout, null);
 			holder = new ViewHolder();
-			//ÄÃµ½¸´ÓÃµÄitem²¼¾ÖÉÏµÄ¿Ø¼ş
+			//æ‹¿åˆ°å¤ç”¨çš„itemå¸ƒå±€ä¸Šçš„æ§ä»¶
 			holder.tvMusicName = (TextView) convertView.findViewById(R.id.tv_item_musicname);
-			//¸øconvertViewÌí¼ÓÒ»¸ö±ê¼Ç
+			//ç»™convertViewæ·»åŠ ä¸€ä¸ªæ ‡è®°
 			convertView.setTag(holder);
 		}else {
-			//Èç¹ûÓĞÖ±½Ó¸ù¾İ±ê¼ÇÄÃÀ´Ê¹ÓÃ
+			//å¦‚æœæœ‰ç›´æ¥æ ¹æ®æ ‡è®°æ‹¿æ¥ä½¿ç”¨
 			holder = (ViewHolder) convertView.getTag();
 		}
-		//°ÑÊı¾İÔ´ÉèÖÃÒªÏÔÊ¾µÄ¿Ø¼şÉÏ
+		//æŠŠæ•°æ®æºè®¾ç½®è¦æ˜¾ç¤ºçš„æ§ä»¶ä¸Š
 		holder.tvMusicName.setText(musics.get(position));
 		return convertView;
 	}
-	//¶ÔÏó³ÖÓĞÕß
+	//å¯¹è±¡æŒæœ‰è€…
 	class ViewHolder{
 		private TextView tvMusicName;
 	}

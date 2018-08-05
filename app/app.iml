@@ -98,7 +98,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
@@ -115,6 +114,9 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 17 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="__local_aars__:E.\jetBrains\android\music\app\src\main\java\com\cwnu\ttpodmusic\utils\okio-1.14.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-v4:18.0.0@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:E.\jetBrains\android\music\app\src\main\java\com\cwnu\ttpodmusic\utils\gson-2.8.5.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:E.\jetBrains\android\music\app\src\main\java\com\cwnu\ttpodmusic\utils\okhttp-3.10.0.jar:unspecified@jar" level="project" />
   </component>
 </module>

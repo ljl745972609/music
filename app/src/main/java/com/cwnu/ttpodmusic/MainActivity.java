@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -23,7 +24,7 @@ import com.cwnu.ttpodmusic.fragment.TaoGeFragment;
 
 public class MainActivity extends FragmentActivity {
 
-	// ÉùÃ÷¿Ø¼ş
+	// å£°æ˜æ§ä»¶
 	private ViewPager vpMain;
 	private RadioGroup rgMain;
 	private RadioButton rb;
@@ -34,20 +35,20 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// ³õÊ¼»¯¿Ø¼ş
+		// åˆå§‹åŒ–æ§ä»¶
 		setupView();
-		// Ìí¼Ó¼àÌıÆ÷
+		// æ·»åŠ ç›‘å¬å™¨
 		addListener();
 		receiver = new MyThemeBgReceiver();
 		IntentFilter filter = new IntentFilter();
 		filter.addAction("ThemeBg");
-		//×¢²á¹ã²¥
+		//æ³¨å†Œå¹¿æ’­
 		
 		registerReceiver(receiver, filter);
 	}
 
 	private void addListener() {
-		// ¸øRadioGroupÌí¼Ó¼àÌıÆ÷
+		// ç»™RadioGroupæ·»åŠ ç›‘å¬å™¨
 		rgMain.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
@@ -72,7 +73,7 @@ public class MainActivity extends FragmentActivity {
 
 			}
 		});
-		// ¸øViewPagerÌí¼Ó¼àÌıÆ÷
+		// ç»™ViewPageræ·»åŠ ç›‘å¬å™¨
 		vpMain.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -114,12 +115,12 @@ public class MainActivity extends FragmentActivity {
 		rlMain = (RelativeLayout) findViewById(R.id.rl_main);
 		vpMain = (ViewPager) findViewById(R.id.vp_main);
 		rgMain = (RadioGroup) findViewById(R.id.rg_main);
-		// ½È×ÓÏÂ¹ø
+		// é¥ºå­ä¸‹é”…
 		MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
 		vpMain.setAdapter(adapter);
 	}
 
-	// AdapterÊÊÅäÆ÷
+	// Adapteré€‚é…å™¨
 	class MyAdapter extends FragmentPagerAdapter {
 
 		public MyAdapter(FragmentManager fm) {
@@ -127,7 +128,7 @@ public class MainActivity extends FragmentActivity {
 			// TODO Auto-generated constructor stub
 		}
 
-		// »ñÈ¡Ä³Ò»Ò³£¨°üºÃµÄÄ³Ò»¸ö½È×Ó£©
+		// è·å–æŸä¸€é¡µ
 		@Override
 		public Fragment getItem(int position) {
 			// TODO Auto-generated method stub
@@ -141,6 +142,8 @@ public class MainActivity extends FragmentActivity {
 				break;
 			case 2:
 				fm = new SearchFragment();
+				RelativeLayout rl_main_bottom = (RelativeLayout) findViewById(R.id.rl_main_bottom);
+				rl_main_bottom.setVisibility(View.GONE);
 				break;
 			case 3:
 				fm = new RecommendFragment();
@@ -158,13 +161,13 @@ public class MainActivity extends FragmentActivity {
 			return 4;
 		}
 	}
-	//ÄÃµ½Ëæ»ú»»·ôµÄÍ¼Æ¬×ÊÔ´
+	//æ‹¿åˆ°éšæœºæ¢è‚¤çš„å›¾ç‰‡èµ„æº
 	int[] imgs = {
 			R.drawable.backgroud,R.drawable.bg1,R.drawable.bg2
 			
 	};
 	private static int index;
-	//¹ã²¥½ÓÊÕÆ÷
+	//å¹¿æ’­æ¥æ”¶å™¨
 	class MyThemeBgReceiver extends BroadcastReceiver{
 
 		@Override
@@ -172,7 +175,7 @@ public class MainActivity extends FragmentActivity {
 			// TODO Auto-generated method stub
 			String action = intent.getAction();
 			if("ThemeBg".equals(action)){
-				//È¡µ½Ëæ»úÏÂ±ê
+				//å–åˆ°éšæœºä¸‹æ ‡
 				index = intent.getIntExtra("index", 0);
 				rlMain.setBackgroundResource(imgs[index]);
 				
@@ -184,7 +187,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		//½â³ı×¢²á
+		//è§£é™¤æ³¨å†Œ
 		unregisterReceiver(receiver);
 	}
 }

@@ -19,6 +19,9 @@ android {
 }
 
 dependencies {
-//    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile 'com.android.support:support-v4:18.0.0'
+    implementation files('src/main/java/com/cwnu/ttpodmusic/utils/gson-2.8.5.jar')
+    implementation files('src/main/java/com/cwnu/ttpodmusic/utils/okhttp-3.10.0.jar')
+    implementation files('src/main/java/com/cwnu/ttpodmusic/utils/okio-1.14.1.jar')
 }
