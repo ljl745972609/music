@@ -1,0 +1,4 @@
+#Sun Aug 05 13:52:25 CST 2018
+base.0=E\:\\jetBrains\\android\\music\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
+path.0=classes.dex
+renamed.0=classes.dex
